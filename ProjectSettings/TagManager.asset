@@ -7,15 +7,16 @@ TagManager:
   - Fire
   - ak47
   - shot
+  - Zombie
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Camara
   - Water
   - UI
   - 
-  - 
+  - Enemigo
   - 
   - GunLayer
   - 
