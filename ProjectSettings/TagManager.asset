@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - ak47
+  - shot
   layers:
   - Default
   - TransparentFX
