@@ -5,15 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Zombie
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Camara
   - Water
   - UI
   - 
-  - 
+  - Enemigo
   - 
   - GunLayer
   - 
