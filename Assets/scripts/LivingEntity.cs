@@ -15,7 +15,7 @@ public class LivingEntity : MonoBehaviour
 
 
     public void TakeDamage(float damage)
-    {
+    {   if(damage <= 0) return;
         health -= damage;
         if(health <= 0 && !dead)
         {
@@ -24,8 +24,9 @@ public class LivingEntity : MonoBehaviour
     }
 
     public IEnumerator Desaparecer()
-    {
-        yield return new WaitForSeconds(1);
+    {   GetComponentInChildren<Animator>().SetTrigger("Dead");
+        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        yield return new WaitForSeconds(3.5f);
         Destroy(gameObject);
     }
 
