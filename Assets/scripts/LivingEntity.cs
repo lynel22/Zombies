@@ -37,7 +37,9 @@ public class LivingEntity : MonoBehaviour
             StartCoroutine(Desaparecer());
         }
         else{
-            onDeathPlayer();
+            if(onDeathPlayer != null){
+                onDeathPlayer();
+            }
             dead = true;
         
         }
