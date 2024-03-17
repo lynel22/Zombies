@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using Unity.VisualScripting;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class hordas : MonoBehaviour
@@ -13,7 +14,13 @@ public class hordas : MonoBehaviour
     public int numHordaActual=0;
     int enemigosPorCrear;
     int enemigosPorMatar;
-    // Start is called before the first frame update
+
+    public Text textoRonda; // Referencia al objeto de texto
+    public Text textoRondafin; // Referencia al objeto de texto
+
+    public AudioClip sonidoRonda; // Referencia al clip de audio
+    public AudioSource audioSource; // Referencia al AudioSource
+
     void Start()
     {   numHordaActual = 0;
         nextHorda();
@@ -41,13 +48,46 @@ public class hordas : MonoBehaviour
 
     void nextHorda()
     {   if(numHordaActual >= hordasEnemigos.Length)
-        {   //carga la siguiente escena
+        {   // Todas las hordas han terminado, muestra un mensaje
+            StartCoroutine(MostrarMensajeFinal());
             return;
         }
         numHordaActual++;
+        StartCoroutine(MostrarTextoRonda());
         enemigoActual = hordasEnemigos[numHordaActual-1];
         enemigosPorCrear = enemigoActual.numeroEnemigos;
         enemigosPorMatar = enemigoActual.numeroEnemigos;
+    }
+
+    IEnumerator MostrarMensajeFinal(){
+        // Actualiza el texto de la ronda y lo muestra
+        textoRondafin.text = "Fin del Juego. Libertad para explorar";
+        textoRondafin.enabled = true;
+
+        // Reproduce el sonido de la ronda
+        audioSource.PlayOneShot(sonidoRonda);
+
+        // Espera 5 segundos
+        yield return new WaitForSeconds(5f);
+
+        // Oculta el texto de la ronda
+        //textoRondafin.enabled = false;
+    }
+
+    IEnumerator MostrarTextoRonda()
+    {
+        // Actualiza el texto de la ronda y lo muestra
+        textoRonda.text = "Ronda " + numHordaActual;
+        textoRonda.enabled = true;
+
+        // Reproduce el sonido de la ronda
+        audioSource.PlayOneShot(sonidoRonda);
+
+        // Espera 5 segundos
+        yield return new WaitForSeconds(2f);
+
+        // Oculta el texto de la ronda
+        textoRonda.enabled = false;
     }
 
 
