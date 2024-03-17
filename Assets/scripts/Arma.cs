@@ -21,6 +21,7 @@ public class Arma : MonoBehaviour
             audioSource.Play();
             animation.wrapMode = WrapMode.Once;
             animation.Play();
+
         }
     }
 }

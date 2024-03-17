@@ -7,10 +7,11 @@ using UnityEngine.Events;
 public class shoot : MonoBehaviour
 {   public float alcance = 1000000000f;
     public   UnityEvent onHitEnemy;
+    float damage;
     // Start is called before the first frame update
     void Start()
     {
-        
+        damage=20;
     }
 
     void Update() {
@@ -35,10 +36,7 @@ public class shoot : MonoBehaviour
             if (hit.transform.gameObject.layer == 7) {
                 // El raycast ha golpeado un enemigo
                 Debug.Log("Enemigo golpeado");
-                if (onHitEnemy != null) // Comprueba si hay suscriptores antes de invocar el evento
-                {
-                    onHitEnemy.Invoke();
-                }
+                hit.transform.GetComponent<LivingEntity>().TakeDamage(damage);
             }
         }
     }
