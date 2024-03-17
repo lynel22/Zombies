@@ -17,7 +17,7 @@ public class hordas : MonoBehaviour
     void Start()
     {   numHordaActual = 0;
         nextHorda();
-        EnemigoMovimiento.onDeathEnemy.AddListener(enemigoMuerto);
+        LivingEntity.onDeathEnemy += enemigoMuerto;
     }
 
     void enemigoMuerto()
@@ -27,16 +27,16 @@ public class hordas : MonoBehaviour
         {
             nextHorda();
         }
-        if(numHordaActual >= hordasEnemigos.Length)
-        {   
-            // if(PlayerPrefs.GetInt("level") == 1)
-            // {
-            //     UnityEngine.SceneManagement.SceneManager.LoadScene("Level2");
-            // }
-            // else
-            // {
-            // UnityEngine.SceneManagement.SceneManager.LoadScene("WIn");}
-        }
+        // if(numHordaActual >= hordasEnemigos.Length)
+        // {   
+        //     if(PlayerPrefs.GetInt("level") == 1)
+        //     {
+        //         UnityEngine.SceneManagement.SceneManager.LoadScene("Level2");
+        //     }
+        //     else
+        //     {
+        //     UnityEngine.SceneManagement.SceneManager.LoadScene("WIn");}
+        // }
     }
 
     void nextHorda()
@@ -85,6 +85,6 @@ public class hordas : MonoBehaviour
 
     void OnDestroy()
     {
-        EnemigoMovimiento.onDeathEnemy.RemoveListener(enemigoMuerto);
+        LivingEntity.onDeathEnemy -= enemigoMuerto;
     }
 }

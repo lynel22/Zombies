@@ -8,6 +8,10 @@ TagManager:
   - ak47
   - shot
   - Zombie
+  - Spawn1
+  - Spawn2
+  - Spawn3
+  - Spawn4
   layers:
   - Default
   - TransparentFX
@@ -19,7 +23,7 @@ TagManager:
   - Enemigo
   - 
   - GunLayer
-  - 
+  - Armas
   - 
   - 
   - 
