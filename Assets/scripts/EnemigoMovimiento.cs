@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class EnemigoMovimiento : MonoBehaviour
@@ -10,6 +11,7 @@ public class EnemigoMovimiento : MonoBehaviour
     UnityEngine.AI.NavMeshAgent pathfinder;
     public float vida;
     shoot sh;
+    public static UnityEvent onDeathEnemy;
 
     Transform objetivo;
     void Start()
@@ -25,7 +27,11 @@ public class EnemigoMovimiento : MonoBehaviour
         
         vida-=20;
         if(vida<=0) {
-            DestroyImmediate(gameObject);
+            DestroyImmediate(gameObject,true);
+            if(onDeathEnemy != null) 
+            {
+                onDeathEnemy.Invoke();
+            }
         }
         Debug.Log("Vida: "+vida);
     }
