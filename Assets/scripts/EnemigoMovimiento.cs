@@ -9,7 +9,9 @@ public class EnemigoMovimiento : LivingEntity
 {   
     // Start is called before the first frame update
     UnityEngine.AI.NavMeshAgent pathfinder;
+
     
+
     shoot sh;
     
 
@@ -19,19 +21,28 @@ public class EnemigoMovimiento : LivingEntity
         objetivo= GameObject.FindGameObjectWithTag("Player").transform;
         pathfinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
         
-        
+        // LivingEntity.onDeathEnemy += Morir;
         
     }
+    // void Morir()
+    // {
+    //     GetComponentInChildren<Animator>().SetTrigger("Dead");
+    //     pathfinder.enabled = false;
+    // }
 
 
     // Update is called once per frame
     void Update()
-    {
-        pathfinder.SetDestination(objetivo.position);
+
+    {   
+        if(pathfinder.enabled)
+        {
+            pathfinder.SetDestination(objetivo.position);
+        }
     }
 
     private void OnDestroy()
     {
-
+        // LivingEntity.onDeathEnemy -= Morir;
     }
 }

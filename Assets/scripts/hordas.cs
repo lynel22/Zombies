@@ -47,11 +47,14 @@ public class hordas : MonoBehaviour
     }
 
     void nextHorda()
-    {   if(numHordaActual >= hordasEnemigos.Length)
+
+    {
+       if(numHordaActual >= hordasEnemigos.Length)
         {   // Todas las hordas han terminado, muestra un mensaje
             StartCoroutine(MostrarMensajeFinal());
             return;
         }
+        
         numHordaActual++;
         StartCoroutine(MostrarTextoRonda());
         enemigoActual = hordasEnemigos[numHordaActual-1];
@@ -63,7 +66,7 @@ public class hordas : MonoBehaviour
         // Actualiza el texto de la ronda y lo muestra
         textoRondafin.text = "Fin del Juego. Libertad para explorar";
         textoRondafin.enabled = true;
-
+    
         // Reproduce el sonido de la ronda
         audioSource.PlayOneShot(sonidoRonda);
 
