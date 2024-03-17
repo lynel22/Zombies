@@ -62,6 +62,9 @@ public class hordas : MonoBehaviour
         enemigosPorMatar = enemigoActual.numeroEnemigos;
     }
 
+    public GameObject cubo; 
+    public ParticleSystem particulas;
+
     IEnumerator MostrarMensajeFinal(){
         // Actualiza el texto de la ronda y lo muestra
         textoRondafin.text = "Fin del Juego. Libertad para explorar";
@@ -74,7 +77,10 @@ public class hordas : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         // Oculta el texto de la ronda
-        //textoRondafin.enabled = false;
+        textoRondafin.enabled = false;
+        cubo.SetActive(true);
+        particulas.Play();
+        
     }
 
     IEnumerator MostrarTextoRonda()
