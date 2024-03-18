@@ -4629,6 +4629,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 378447929}
     m_Modifications:
     - target: {fileID: -5716681864270162303, guid: d8ff8f9649a82e14791d960a0a17f1e4, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5716681864270162303, guid: d8ff8f9649a82e14791d960a0a17f1e4, type: 3}
       propertyPath: m_PlayAutomatically
       value: 0
       objectReference: {fileID: 0}
@@ -5263,6 +5267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3cf0d8895b8be4095bacf281a65762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   startingHealth: 100
   healthBar: {fileID: 756348696}
   panelRojo: {fileID: 419957921}
