@@ -25,7 +25,7 @@ public class VidaPLayer : LivingEntity
     private void OnTriggerEnter(Collider other)
     {   
         // Verifica si el collider con el que hemos colisionado pertenece a la capa 7
-        if (other.gameObject.layer == 7 && canAttack)
+        if (other.gameObject.layer == 7 && canAttack && !other.GetComponent<LivingEntity>().isDead)
         {
             // Verifica las etiquetas del objeto con el que hemos colisionado
             if(other.gameObject.tag == "Zombie1")
