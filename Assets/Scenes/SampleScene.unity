@@ -1324,11 +1324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224763426186284840, guid: 5eefba205a58c8c4a937c97b87c185a3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -391
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224763426186284840, guid: 5eefba205a58c8c4a937c97b87c185a3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -430
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 224763426186284840, guid: 5eefba205a58c8c4a937c97b87c185a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3453,16 +3453,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hordasEnemigos:
   - tipoEnemigo: {fileID: 7118716497104375168, guid: 765857bf198771543bcf1d72f75905d0, type: 3}
-    numeroEnemigos: 4
+    numeroEnemigos: 7
     tiempoEntreEnemigos: 1
   - tipoEnemigo: {fileID: 7351005895723519128, guid: 3396dda6a4515d34f983d1aac45bf15f, type: 3}
-    numeroEnemigos: 1
+    numeroEnemigos: 5
     tiempoEntreEnemigos: 2
   - tipoEnemigo: {fileID: 7118716497104375168, guid: 765857bf198771543bcf1d72f75905d0, type: 3}
-    numeroEnemigos: 1
+    numeroEnemigos: 10
     tiempoEntreEnemigos: 2
   - tipoEnemigo: {fileID: 7351005895723519128, guid: 3396dda6a4515d34f983d1aac45bf15f, type: 3}
-    numeroEnemigos: 1
+    numeroEnemigos: 6
     tiempoEntreEnemigos: 2
   numHordaActual: 0
   textoRonda: {fileID: 1099557171}
